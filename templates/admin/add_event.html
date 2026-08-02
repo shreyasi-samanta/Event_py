@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Add Event</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-dark text-white">
+
+            <h3>Add New Event</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <form action="/admin/add-event"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <div class="mb-3">
+
+                    <label>Event Name</label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Description</label>
+
+                    <textarea
+                        name="description"
+                        class="form-control"
+                        rows="5"
+                        required></textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Location</label>
+
+                    <input
+                        type="text"
+                        name="location"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Date</label>
+
+                    <input
+                        type="date"
+                        name="date"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Event Image</label>
+
+                    <input
+                        type="file"
+                        name="image"
+                        class="form-control"
+                        accept="image/*"
+                        required>
+
+                </div>
+
+                
+                <div class="mb-3">
+    <label class="form-label">Price (₹)</label>
+    
+    <input
+        type="number"
+        name="price"
+        class="form-control"
+        step="0.01"
+        min="0"
+        required>
+</div>
+<button class="btn btn-success">
+
+                    Add Event
+
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+<li class="nav-item mb-2">
+    <a href="/admin/view-events" class="nav-link text-white">
+        <i class="fa-solid fa-list me-2"></i>
+        View Events
+    </a>
+</li>
+</body>
+</html>

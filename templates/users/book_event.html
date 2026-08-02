@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Book Event</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+<div class="row justify-content-center">
+
+<div class="col-md-7">
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+
+<h3>
+
+Book Event
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-warning">
+{% for message in messages %}
+<div>{{ message }}</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+<h4>
+
+{{ event.name }}
+
+</h4>
+
+<p>
+
+{{ event.description }}
+
+</p>
+
+<p>
+
+<b>Location :</b>
+
+{{ event.location }}
+
+</p>
+
+
+
+<p>
+
+<b>Event Price :</b>
+
+Rs. {{ event.price }}
+
+</p>
+
+<form
+action="/confirm-booking/{{ event.id }}"
+method="POST">
+
+<div class="mb-3">
+
+<label>
+
+Event Date
+
+</label>
+
+<input
+type="date"
+name="event_date"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Number of Invited People
+
+</label>
+
+<input
+type="number"
+name="people"
+id="people"
+min="1"
+max="{{ max_people }}"
+value="1"
+class="form-control"
+required>
+
+<small class="text-muted">
+This is only for the guest count and does not change the booking amount.
+</small>
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Contact Number
+
+</label>
+
+<input
+type="text"
+name="contact"
+class="form-control"
+required>
+
+</div>
+
+
+
+    <!-- Date -->
+
+    <!-- Contact -->
+
+    <!-- Number of People -->
+
+    <button
+        class="btn btn-success"
+        type="submit"
+        formaction="/confirm-booking/{{ event.id }}"
+        name="action"
+        value="confirm">
+
+        Confirm Booking
+
+    </button>
+
+    <button
+        class="btn btn-primary"
+        type="submit"
+        formaction="/pay-online/{{ event.id }}"
+        name="action"
+        value="pay">
+
+        Pay Online
+
+    </button>
+
+
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>

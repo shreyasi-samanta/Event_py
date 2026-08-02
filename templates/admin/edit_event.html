@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Edit Event</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-warning">
+
+            <h3>Edit Event</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST" enctype="multipart/form-data">
+
+                <div class="mb-3">
+
+                    <label>Event Name</label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        value="{{ event.name }}"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Description</label>
+
+                    <textarea
+                        name="description"
+                        class="form-control"
+                        rows="4"
+                        required>{{ event.description }}</textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Location</label>
+
+                    <input
+                        type="text"
+                        name="location"
+                        class="form-control"
+                        value="{{ event.location }}"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Date</label>
+
+                    <input
+                        type="date"
+                        name="date"
+                        class="form-control"
+                        value="{{ event.date }}"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Price</label>
+
+                    <input
+                        type="number"
+                        name="price"
+                        class="form-control"
+                        value="{{ event.price }}"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Current Image</label>
+
+                    <br>
+
+                    <img src="{{ url_for('static', filename='uploads/' + event.image) }}"
+                         width="180">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Change Image</label>
+
+                    <input
+                        type="file"
+                        name="image"
+                        class="form-control">
+
+                </div>
+
+                <button class="btn btn-success">
+
+                    Update Event
+
+                </button>
+
+                <a href="/admin/view-events"
+                   class="btn btn-secondary">
+
+                    Cancel
+
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

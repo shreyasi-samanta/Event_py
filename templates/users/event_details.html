@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Browse Events | EventHub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body class="bg-light">
+
+<div class="d-flex">
+
+    <!-- Sidebar -->
+
+    <div class="bg-dark text-white p-3 d-flex flex-column"
+         style="width:250px; min-height:100vh;">
+
+        <h3 class="text-center mb-4">
+
+            EventHub
+
+        </h3>
+
+        <hr>
+
+        <ul class="nav flex-column">
+
+            <li class="nav-item mb-2">
+                <a href="/user/dashboard" class="nav-link text-white">
+                    <i class="fa-solid fa-house me-2"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="/user/events" class="nav-link active bg-primary text-white rounded">
+                    <i class="fa-solid fa-calendar-days me-2"></i>
+                    Browse Events
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="/my-bookings" class="nav-link text-white">
+                    <i class="fa-solid fa-ticket me-2"></i>
+                    My Bookings
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="mt-auto">
+
+            <hr>
+
+            <a href="/logout" class="btn btn-danger w-100">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="container-fluid p-4">
+
+        <h2 class="mb-4">
+
+            Browse Events
+
+        </h2>
+
+        <div class="row">
+
+            {% if events %}
+
+                {% for event in events %}
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <div class="card shadow h-100">
+
+                        <img src="{{ url_for('static', filename='uploads/' + event.image) }}"
+                             class="card-img-top"
+                             style="height:220px; object-fit:cover;">
+
+                        <div class="card-body">
+
+                            <h4>{{ event.name }}</h4>
+
+                            <p>{{ event.description }}</p>
+
+                            <p>
+                                <strong>Location:</strong>
+                                {{ event.location }}
+                            </p>
+
+                            <p>
+                                <strong>Date:</strong>
+                                {{ event.date }}
+                            </p>
+
+                            <p>
+                                <strong>Price:</strong>
+                                ₹ {{ event.price }}
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer bg-white">
+
+                            <a href="/book/{{ event.id }}"
+                               class="btn btn-success w-100">
+
+                                <i class="fa-solid fa-ticket me-2"></i>
+
+                                Book Now
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="col-12">
+
+                    <div class="alert alert-warning">
+
+                        No events are available at the moment.
+
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

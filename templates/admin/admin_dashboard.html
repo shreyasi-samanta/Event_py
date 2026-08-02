@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | EventHub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="d-flex">
+
+    <!-- Sidebar -->
+
+    <div class="bg-dark text-white p-3 d-flex flex-column"
+     style="width:250px; height:100vh;">
+
+    <h3 class="text-center mb-4">
+        EventHub
+    </h3>
+
+    <hr>
+
+    <!-- Top Menu -->
+    <ul class="nav flex-column">
+
+        <li class="nav-item mb-2">
+            <a href="/dashboard" class="nav-link text-white">
+                <i class="fa-solid fa-house me-2"></i>
+                Home
+            </a>
+        </li>
+
+        <li class="nav-item mb-2">
+            <a href="/admin/add-event" class="nav-link text-white">
+                <i class="fa-solid fa-calendar-plus me-2"></i>
+                Add Events
+            </a>
+        </li>
+
+        <li class="nav-item mb-2">
+            <a href="/admin/view-events" class="nav-link text-white">
+                <i class="fa-solid fa-eye me-2"></i>
+                View Events
+            </a>
+        </li>
+
+       <li class="nav-item mb-2">
+    <a href="/admin/users" class="nav-link text-white">
+        <i class="fa-solid fa-users me-2"></i>
+        Users
+    </a>
+</li>
+
+    </ul>
+    
+    <!-- Bottom Menu -->
+    <div class="mt-auto">
+
+        <hr>
+
+        <a href="/settings"
+           class="btn btn-outline-light w-100 mb-2">
+            <i class="fa-solid fa-gear me-2"></i>
+            Settings
+        </a>
+
+        <a href="/logout"
+           class="btn btn-danger w-100">
+            <i class="fa-solid fa-right-from-bracket me-2"></i>
+            Logout
+        </a>
+
+    </div>
+
+</div>
+    <!-- Main Content -->
+
+    <div class="container-fluid p-4">
+
+        <h2 class="mb-4">
+            Welcome Admin
+        </h2>
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div class="card shadow">
+
+                    <div class="card-body text-center">
+
+                        <h5>Total Events</h5>
+
+                        <h2>{{ total_events }}</h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="col-md-4">
+
+                <div class="card shadow">
+
+                    <div class="card-body text-center">
+
+                        <h5>Total Users</h5>
+
+                        <h2>{{ total_users }}</h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card shadow">
+
+                    <div class="card-body text-center">
+
+                        <h5>Total Bookings</h5>
+
+                        <h2>{{ total_bookings }}</h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mt-5">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="mb-4">Recent Bookings</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Username</th>
+                                    <th>Event Name</th>
+                                    <th>Event Date</th>
+                                    <th>Price</th>
+                                    <th>People</th>
+                                    <th>Contact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for booking in admin_bookings %}
+                                <tr>
+                                    <td>{{ booking.id }}</td>
+                                    <td>{{ booking.username }}</td>
+                                    <td>{{ booking.name }}</td>
+                                    <td>{{ booking.event_date }}</td>
+                                    <td>₹ {{ booking.price }}</td>
+                                    <td>{{ booking.no_of_people }}</td>
+                                    <td>{{ booking.contact_no }}</td>
+                                </tr>
+                                {% else %}
+                                <tr>
+                                    <td colspan="6" class="text-center py-4">No recent bookings found.</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

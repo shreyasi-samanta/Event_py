@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>View Events</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <h2 class="mb-4">
+
+        All Events
+
+    </h2>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Image</th>
+
+                <th>Name</th>
+
+                <th>Location</th>
+
+                <th>Date</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for event in events %}
+
+            <tr>
+
+                <td>{{ event.id }}</td>
+
+                <td>
+
+                    <img src="{{ url_for('static',
+                    filename='uploads/' + event.image) }}"
+                    width="120">
+
+                </td>
+
+                <td>{{ event.name }}</td>
+
+                <td>{{ event.location }}</td>
+
+                <td>{{ event.date }}</td>
+
+                <td>
+
+                    <a href="/admin/edit-event/{{ event.id }}"
+                       class="btn btn-warning btn-sm">
+
+                        Edit
+
+                    </a>
+
+                    <a href="/admin/delete-event/{{ event.id }}"
+                       class="btn btn-danger btn-sm">
+
+                        Delete
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+
+</html>

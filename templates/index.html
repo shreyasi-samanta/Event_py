@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub | Event Booking System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+        <div class="container nav-container">
+
+            <div class="logo">
+                EventHub
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                 <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="buttons">
+                <button class="btn login-btn"
+        data-bs-toggle="modal"
+        data-bs-target="#loginModal">
+    Login
+</button>
+             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
+    Register
+</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    Discover Amazing Events Near You
+                </h1>
+
+                <p>
+                    Book concerts, workshops, conferences, festivals and many
+                    more exciting events with just a few clicks.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#" class="primary-btn">Browse Events</a>
+                    <a href="#" class="secondary-btn">Learn More</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+     <!-- ================= HOW IT WORKS ================= -->
+
+<section class="how-it-works py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                How It Works
+            </h2>
+
+            <p class="text-muted">
+                Book your favorite events in just three simple steps.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Step 1 -->
+
+            <div class="col-md-4">
+
+                <div class="how-card text-center">
+
+                    <div class="icon-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+                    <h4 class="mt-4">
+                        Explore Events
+                    </h4>
+
+                    <p>
+                        Browse concerts, workshops, conferences, festivals,
+                        and many exciting events happening near you.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Step 2 -->
+
+            <div class="col-md-4">
+
+                <div class="how-card text-center">
+
+                    <div class="icon-box">
+
+                        <i class="fa-solid fa-ticket"></i>
+
+                    </div>
+
+                    <h4 class="mt-4">
+                        Book Your Seat
+                    </h4>
+
+                    <p>
+                        Select your preferred event, choose the number of
+                        attendees, and confirm your booking details.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Step 3 -->
+
+            <div class="col-md-4">
+
+                <div class="how-card text-center">
+
+                    <div class="icon-box">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                    </div>
+
+                    <h4 class="mt-4">
+                        Enjoy the Event
+                    </h4>
+
+                    <p>
+                        Receive your booking confirmation and get ready to
+                        enjoy an unforgettable experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT US ================= -->
+
+<section class="about-us py-5" id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Image -->
+
+            <div class="col-lg-6 mb-4 mb-lg-0">
+
+                <img src="https://i.pinimg.com/736x/10/04/7c/10047c6ec350896b78308fb814a7e042.jpg"
+                     alt="About EventHub"
+                     class="img-fluid rounded shadow">
+
+            </div>
+
+            <!-- Content -->
+
+            <div class="col-lg-6">
+
+                <span class="about-tag">
+                    ABOUT EVENTHUB
+                </span>
+
+                <h2 class="mt-3 mb-4">
+                    Bringing People Together Through Unforgettable Events
+                </h2>
+
+                <p>
+                    EventHub is a modern event booking platform designed to help
+                    people discover, book, and enjoy a wide range of events.
+                    From music concerts and workshops to conferences and cultural
+                    festivals, we make finding the perfect event simple and
+                    convenient.
+                </p>
+
+                <p>
+                    Our goal is to provide a secure, user-friendly, and reliable
+                    booking experience. With just a few clicks, users can explore
+                    upcoming events, reserve their seats, and manage their
+                    bookings from a personalized dashboard.
+                </p>
+
+                <a href="#" class="btn btn-primary mt-3">
+                    Explore Events
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= OUR SERVICES ================= -->
+
+<section class="services py-5" id="services">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Our Services
+            </h2>
+
+            <p class="services-description" style="color: rgb(185, 180, 180) !important;">
+                We provide event booking solutions for every special occasion.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Concert -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <img src="https://i.pinimg.com/1200x/20/07/64/20076427a5fe7b60db203d9949d55f2d.jpg"
+                         class="img-fluid"
+                         alt="Concert">
+
+                    <div class="service-content">
+
+                        <h4>Concert Booking</h4>
+
+                        <p>
+                            Reserve tickets for live music concerts,
+                            celebrity performances, and entertainment shows.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Wedding -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <img src="https://i.pinimg.com/736x/2a/04/86/2a0486b2cd774340a1a696b7ad2f08e6.jpg"
+                         class="img-fluid"
+                         alt="Wedding">
+
+                    <div class="service-content">
+
+                        <h4>Wedding Events</h4>
+
+                        <p>
+                            Discover beautiful wedding venues and book
+                            complete wedding event packages with ease.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Corporate -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <img src="https://i.pinimg.com/736x/c4/03/07/c40307531c48848d2a03035e22e7d31c.jpg"
+                         class="img-fluid"
+                         alt="Corporate">
+
+                    <div class="service-content">
+
+                        <h4>Corporate Conferences</h4>
+
+                        <p>
+                            Book professional conferences, business meetings,
+                            networking events, and corporate seminars.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Birthday -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <img src="https://i.pinimg.com/736x/9d/5b/e4/9d5be4eb8bea1c525e7a1868ef731a95.jpg"
+                         class="img-fluid"
+                         alt="Birthday">
+
+                    <div class="service-content">
+
+                        <h4>Birthday Parties</h4>
+
+                        <p>
+                            Celebrate birthdays with customized party
+                            planning, decorations, and entertainment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Workshop -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <img src="https://i.pinimg.com/736x/c1/6e/b6/c16eb6812c66c7d1294a5ed3b6803e25.jpg"
+                         class="img-fluid"
+                         alt="Workshop">
+
+                    <div class="service-content">
+
+                        <h4>Workshops & Seminars</h4>
+
+                        <p>
+                            Register for educational workshops, technical
+                            training sessions, and professional seminars.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Festival -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <img src="https://i.pinimg.com/1200x/16/23/d0/1623d0817a308cdb3a8468f77f8bb155.jpg"
+                         class="img-fluid"
+                         alt="Festival">
+
+                    <div class="service-content">
+
+                        <h4>Cultural Festivals</h4>
+
+                        <p>
+                            Experience colorful cultural festivals,
+                            exhibitions, fairs, and community celebrations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="container">
+
+            <h2>Why Choose EventHub?</h2>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+                    <h3>🎟 Easy Booking</h3>
+                    <p>Book your favourite events in seconds.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📅 Latest Events</h3>
+                    <p>Stay updated with upcoming events around you.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔒 Secure Platform</h3>
+                    <p>Your information remains protected and secure.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why-choose py-5" id="why-choose">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Left Content -->
+
+            <div class="col-lg-6">
+
+                <span class="section-subtitle">
+                    WHY CHOOSE EVENTHUB
+                </span>
+
+                <h2 class="section-title mt-3">
+                    Your Trusted Partner for Every Memorable Event
+                </h2>
+
+                <p class="section-description mt-4">
+                    EventHub makes event booking simple, secure, and hassle-free.
+                    Whether you're planning to attend a concert, wedding, corporate
+                    conference, workshop, or cultural festival, our platform helps
+                    you discover and reserve your spot in just a few clicks.
+                </p>
+
+                <div class="feature-item">
+
+                    <div class="feature-text">
+                        <h5>Easy Online Booking</h5>
+                        <p>
+                            Book your favorite events anytime, anywhere with a smooth booking process.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="feature-text">
+                        <h5>Secure Payments</h5>
+                        <p>
+                            Your online transactions are protected through trusted payment gateways.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="feature-text">
+                        <h5>Verified Events</h5>
+                        <p>
+                            We feature genuine and carefully verified event organizers.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="feature-text">
+                        <h5>Instant Confirmation</h5>
+                        <p>
+                            Receive booking confirmation immediately after successful payment.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Video -->
+
+            <div class="col-lg-6">
+
+                <div class="video-box">
+
+                    <!-- Replace this video with yours -->
+
+                   <iframe width="560" height="515" src="https://www.youtube.com/embed/PN7Pv23FrWg?si=Ts7jSRr4ymGSIBv5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================= EVENTS ================= -->
+
+    <section class="events" id="events">
+
+        <div class="container">
+
+            <h2>Upcoming Events</h2>
+
+            <div class="event-grid">
+
+                <div class="event-card">
+                    <img src="https://i.pinimg.com/736x/6f/d5/bf/6fd5bfaf8085c3dec6e02053854a95fb.jpg" alt="Concert">
+                    <div class="event-content">
+                        <h3>Live Music Concert</h3>
+                        <p>Kolkata • 15 August 2026</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://i.pinimg.com/736x/33/df/48/33df48eb0a0d0dd8aed282b84119171d.jpg" alt="Workshop">
+                    <div class="event-content">
+                        <h3>Python Workshop</h3>
+                        <p>Online • 22 August 2026</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://i.pinimg.com/1200x/a8/44/9b/a8449b48d730dd54ffdb50e16dd53b1b.jpg" alt="Conference">
+                    <div class="event-content">
+                        <h3>Tech Conference</h3>
+                        <p>Bengaluru • 10 September 2026</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about">
+
+        <div class="container">
+
+            <h2>Experience Events Like Never Before</h2>
+
+            <p>
+                EventHub is a simple and efficient platform that helps users
+                discover, book, and manage event registrations with ease.
+                Whether it's a concert, workshop, seminar, or festival,
+                EventHub makes booking effortless.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+   <!-- ================= FOOTER ================= -->
+
+<footer class="footer" id="contact">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- About -->
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <h3 class="footer-logo">
+                    EventHub
+                </h3>
+
+                <p class="footer-text">
+                    EventHub is your trusted event booking platform where you can
+                    discover concerts, weddings, corporate conferences,
+                    workshops, and cultural festivals. We make booking events
+                    simple, secure, and hassle-free.
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <h5>Quick Links</h5>
+
+                <ul class="footer-links">
+
+                    <li><a href="#">Home</a></li>
+
+                    <li><a href="#about">About Us</a></li>
+
+                    <li><a href="#services">Services</a></li>
+
+                    <li><a href="#events">Events</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Services -->
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <h5>Our Services</h5>
+
+                <ul class="footer-links">
+
+                    <li>Concert Booking</li>
+
+                    <li>Wedding Events</li>
+
+                    <li>Corporate Conferences</li>
+
+                    <li>Birthday Parties</li>
+
+                    <li>Workshops & Seminars</li>
+
+                    <li>Cultural Festivals</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <h5>Contact Us</h5>
+
+                <p>
+                    <i class="fa-solid fa-location-dot me-2"></i>
+                    Kolkata, West Bengal, India
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone me-2"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope me-2"></i>
+                    info@eventhub.com
+                </p>
+
+                <div class="social-icons mt-3">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom text-center">
+
+            <p class="mb-0">
+                © 2026 <strong>EventHub</strong>. All Rights Reserved.
+                Designed with ❤️ for unforgettable experiences.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+   <div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Register</h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <form action="/register" method="POST">
+
+                    <div class="mb-3">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="username"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            required>
+                    </div>
+
+                    <button class="btn btn-success w-100">
+                        Register
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Login
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form action="/login" method="POST">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            name="username"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <button class="btn btn-primary w-100">
+
+                        Login
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

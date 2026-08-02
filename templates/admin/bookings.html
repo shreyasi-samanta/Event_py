@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Bookings | Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <h2 class="mb-4">All Bookings</h2>
+
+    <table class="table table-bordered table-striped shadow">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>ID</th>
+                <th>Event Name</th>
+                <th>Event Date</th>
+                <th>Location</th>
+                <th>Total Amount</th>
+                <th>Contact Number</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for booking in bookings %}
+
+        <tr>
+
+            <td>{{ booking.id }}</td>
+
+            <td>{{ booking.name }}</td>
+
+            <td>{{ booking.event_date }}</td>
+
+            <td>{{ booking.location }}</td>
+
+            <td>₹ {{ booking.total_amount }}</td>
+
+            <td>{{ booking.contact_no }}</td>
+
+        </tr>
+
+        {% else %}
+
+        <tr>
+
+            <td colspan="6" class="text-center">
+                No bookings found.
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>
